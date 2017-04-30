@@ -1,0 +1,79 @@
+{
+    "name": "gazbond/yii2-boilerplate-app",
+    "description": "Yii2 Boilerplate Project Template",
+    "keywords": ["yii2", "framework", "project template"],
+    "homepage": "http://gazbond.co.uk/",
+    "type": "project",
+    "license": "proprietary",
+    "support": {
+        "issues": "https://github.com/gazbond/yii2-boilerplate-app/issues?state=open",
+        "source": "https://github.com/gazbond/yii2-boilerplate-app"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.0",
+
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+
+        "dektrium/yii2-user": "0.9.*",
+        "dektrium/yii2-rbac": "0.2.*",
+        "yii2mod/yii2-settings": "*",
+        "pendalf89/yii2-filemanager": "*",
+        "pendalf89/yii2-blog": "*",
+
+        "yiisoft/yii2-elasticsearch": "*",
+        "borales/yii2-elasticsearch-behavior": "*",
+
+        "stripe/stripe-php": "2.*",
+        "sizeg/yii2-jwt": "*",
+
+        "kartik-v/yii2-grid": "*",
+        "metalguardian/yii2-form-builder": "~1.0",
+        "2amigos/yii2-bootstrap-form-helpers-library": "*",
+
+        "iiifx-production/yii2-autocomplete-helper": "*",
+        "yiisoft/yii2-jui": "^2.0",
+        "lcobucci/jwt": "3.2"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "tebazil/yii2-db-seeder": "*",
+
+        "codeception/codeception": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    }
+}
