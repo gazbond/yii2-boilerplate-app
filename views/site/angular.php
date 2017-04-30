@@ -5,7 +5,7 @@ use yii\web\View;
 /* @var $this yii\web\View */
 /* @var $identity yii\web\IdentityInterface */
 
-$this->title = 'Angular v2';
+$this->title = 'Angular v4';
 $this->params['breadcrumbs'][] = $this->title;
 
 $this->registerJsFile('@web/dist/shims.js', [
