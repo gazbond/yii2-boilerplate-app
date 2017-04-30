@@ -29,8 +29,6 @@ The minimum requirement by this project template that your Web server supports P
 CONFIGURATION
 -------------
 
-### Database
-
 Edit `config/db.php` and `config/test-db.php` with real data, for example:
 
 ```php
