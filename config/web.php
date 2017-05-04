@@ -45,6 +45,23 @@ $config = [
                 'yii\web\JqueryAsset' => [
                     'js'=>[]
                 ],
+                'pendalf89\filemanager\assets\FileInputAsset' => [
+                    'depends' => [
+                        'app\assets\AppAsset',
+                        'pendalf89\filemanager\assets\ModalAsset'
+                    ]
+                ],
+                'pendalf89\filemanager\assets\FilemanagerAsset' => [
+                    'depends' => [
+                        'app\assets\AppAsset'
+                    ]
+                ],
+                'pendalf89\filemanager\assets\ModalAsset' => [
+                    'depends' => [
+                        'app\assets\AppAsset'
+                    ]
+
+                ]
             ]
         ],
         'settings'=>[

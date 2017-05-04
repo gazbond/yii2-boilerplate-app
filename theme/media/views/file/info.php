@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use app\assets\media\FilemanagerAsset;
+use pendalf89\filemanager\assets\FilemanagerAsset;
 use pendalf89\filemanager\Module;
 use pendalf89\filemanager\models\Tag;
 
