@@ -1,7 +1,7 @@
 <?php
 
 use pendalf89\filemanager\Module;
-use pendalf89\filemanager\assets\ModalAsset;
+use app\assets\media\ModalAsset;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */

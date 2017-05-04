@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use pendalf89\filemanager\Module;
-use pendalf89\filemanager\assets\FilemanagerAsset;
+use app\assets\media\FilemanagerAsset;
 
 /* @var $this yii\web\View */
 

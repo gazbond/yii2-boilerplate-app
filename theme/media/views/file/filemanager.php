@@ -1,6 +1,6 @@
 <?php
 
-use pendalf89\filemanager\assets\FilemanagerAsset;
+use app\assets\media\FilemanagerAsset;
 use pendalf89\filemanager\Module;
 use pendalf89\filemanager\models\Tag;
 use yii\helpers\ArrayHelper;
