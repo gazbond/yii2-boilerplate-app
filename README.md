@@ -3,7 +3,7 @@ Demo: http://yii2-boilerplate-app.com/
 DIRECTORY STRUCTURE
 -------------------
 
-      angular/            contains Angular v2 components and scss files
+      angular/            contains Angular v4 components and scss files
       assets/             contains assets definition
       commands/           contains console commands (controllers)
       components/         contains reusable Yii components
