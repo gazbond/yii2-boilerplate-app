@@ -15,7 +15,8 @@ $config = yii\helpers\ArrayHelper::merge(
                 'enablePrettyUrl' => false
             ],
             'request' => [
-                'enableCsrfValidation' => false
+                'enableCsrfValidation' => false,
+                'enableCookieValidation' => false
             ]
         ],
     ]

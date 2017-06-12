@@ -10,8 +10,7 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
-            'cookieValidationKey' => 'nqDzXcvej848EfMauByXFvZ2fPqw9lRj',
-            'enableCookieValidation' => false
+            'cookieValidationKey' => 'g689Vbq27hHu45J9ccCd4akLuZ7Olm95sg6'
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -29,7 +28,7 @@ $config = [
                     'categories' => [
                         'yii\db\*',
                         'yii\web\HttpException:*',
-                        'application'
+                        'app'
                     ],
                 ],
             ],
