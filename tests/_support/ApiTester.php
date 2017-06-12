@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Url as Url;
 
 /**
  * Inherited Methods
@@ -27,8 +28,16 @@ class ApiTester extends \Codeception\Actor
     /**
      * Use Yii2 login form to get JWT token and set in Bearer header.
      */
-   public function amYii2JwtAuthenticated()
-   {
-       codecept_debug('Why are api tests using AcceptanceTester ?');
-   }
+    public function amYii2JwtAuthenticated($login, $password)
+    {
+        codecept_debug('LOOK HERE ApiTester->amYii2JwtAuthenticated()');
+
+        $this->amOnPage(Url::toRoute('/user/security/login'));
+        $this->submitForm('#login-form', [
+            'login-form[login]' => $login,
+            'login-form[password]' => $password
+        ]);
+        $token = $this->grabCookie('jwt');
+        $this->setHeader('Authorization', 'Bearer ' . $token);
+    }
 }

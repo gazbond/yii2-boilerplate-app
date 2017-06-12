@@ -38,6 +38,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function amYii2JwtAuthenticated($login, $password)
     {
+        codecept_debug('LOOK HERE AcceptanceTester->amYii2JwtAuthenticated()');
+
         $this->amOnPage(Url::toRoute('/user/security/login'));
         $this->submitForm('#login-form', [
             'login-form[login]' => $login,
