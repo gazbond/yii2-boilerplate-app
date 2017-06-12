@@ -14,13 +14,11 @@ class LoginCest
     {
         $I->amOnPage(Url::toRoute('/user/security/login'));
         $I->see('Login', 'h3');
-
-        $I->amGoingTo('try to login with correct credentials');
+        $I->amGoingTo('login with correct credentials');
         $I->submitForm('#login-form', [
             'login-form[login]' => 'root',
             'login-form[password]' => 'password'
         ]);
-
         $I->expectTo('see user info');
         $I->see('root', 'a.dropdown-toggle');
     }
@@ -28,15 +26,15 @@ class LoginCest
     public function ensureJwtTokenWorks(AcceptanceTester $I)
     {
         $I->amOnPage(Url::toRoute('/user/security/login'));
+        $I->amGoingTo('login with correct credentials');
         $I->submitForm('#login-form', [
             'login-form[login]' => 'root',
             'login-form[password]' => 'password'
         ]);
-        $I->see('root', 'a.dropdown-toggle');
-        $I->canSeeCookie('jwt');
+        $I->amGoingTo('use jwt token to access api');
         $token = $I->grabCookie('jwt');
         $I->setHeader('Authorization', 'Bearer ' . $token);
-        $I->amOnPage('/api/users');
+        $I->amOnPage(Url::toRoute('/api/users'));
         $I->seeResponseCodeIs(200);
     }
 }
