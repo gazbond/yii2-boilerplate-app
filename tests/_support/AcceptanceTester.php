@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Url as Url;
 
 /**
  * Inherited Methods
@@ -30,5 +31,19 @@ class AcceptanceTester extends \Codeception\Actor
     public function wait($seconds)
     {
         sleep($seconds);
+    }
+
+    /**
+     * Use Yii2 login form to get JWT token and set in Bearer header.
+     */
+    public function amYii2JwtAuthenticated($login, $password)
+    {
+        $this->amOnPage(Url::toRoute('/user/security/login'));
+        $this->submitForm('#login-form', [
+            'login-form[login]' => $login,
+            'login-form[password]' => $password
+        ]);
+        $token = $this->grabCookie('jwt');
+        $this->setHeader('Authorization', 'Bearer ' . $token);
     }
 }
